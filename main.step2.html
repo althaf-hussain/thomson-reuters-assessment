@@ -1,0 +1,65 @@
+<div ng-controller="step2Ctrl" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form name="dateTimeForm" ng-submit="onSubmitStep2()" novalidate>
+                <div class="form-group">
+                    <label for="location" class="control-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" ng-model="user.location" typeahead="location for location in user.locations | filter:$viewValue" required="true"/>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 ">
+                        <label for="departDate" class="control-label">Depart Date</label>
+                            <p class="input-group">
+                                <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.departDate"
+                                       is-open="departOpened" min-date="minDepartDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
+                                       date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"
+                                       show-weeks="false" id="departDate" show-button-bar="false" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="openDepartDate($event)">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </p>
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label for="departDate" class="control-label">Return Date</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.returnDate"
+                                   is-open="returnOpened" min-date="minReturnDate" max-date="'2015-06-22'" datepicker-options="dateOptions"
+                                   date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"
+                                   show-weeks="false" id="returnDate" show-button-bar="false"/>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="openReturnDate($event)">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <div class="col-md-10">
+                            <label for="departTime" class="control-label">Depart Time</label>
+                            <timepicker ng-model="user.departTime" ng-change="changed()" hour-step="hstep" minute-step="mstep"
+                            show-meridian="ismeridianDepart" id="departTime"></timepicker>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="col-md-10">
+                            <label for="returnTime" class="control-label">Return Time</label>
+                            <timepicker ng-model="user.returnTime" ng-change="changed()" hour-step="hstep" minute-step="mstep"
+                                        show-meridian="ismeridianReturn" id="returnTime"></timepicker>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-lg btn-primary" ng-disabled="dateTimeForm.$invalid" type="submit" value="Next" />
+            </form>
+        </div>
+    </div>
+    <section class="container">
+        <div class="panel margin-top-30">
+            <progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar>
+        </div>
+    </section>
+</div>
+
