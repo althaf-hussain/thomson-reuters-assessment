@@ -5,23 +5,23 @@ thomsonTest.config(function($stateProvider, $urlRouterProvider, $locationProvide
     $stateProvider
         .state('main', {
             url: "/",
-            templateUrl: "main.html"
+            templateUrl: "partials/main.html"
         })
         .state('main.step1', {
-            url: "step1",
-            templateUrl: "main.step1.html"
+            url: "/step1",
+            templateUrl: "partials/main.step1.html"
         })
         .state('main.step2', {
-            url: 'step2',
-            templateUrl: 'main.step2.html'
+            url: '/step2',
+            templateUrl: 'partials/main.step2.html'
         })
         .state('main.step3', {
-            url: 'step3',
-            templateUrl: 'main.step3.html'
+            url: '/step3',
+            templateUrl: 'partials/main.step3.html'
         })
         .state('main.step4', {
-            url: 'step4',
-            templateUrl: 'main.step4.html'
+            url: '/step4',
+            templateUrl: 'partials/main.step4.html'
         });
 
     $urlRouterProvider.otherwise("/");

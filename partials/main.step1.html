@@ -1,0 +1,33 @@
+<div  ng-controller="step1Ctrl" class="container-fluid form-horizontal">
+    <div class="row">
+        <div class="col-md-6">
+            <form name="contactForm" ng-submit="onSubmit()" novalidate>
+                <div class="form-group">
+                    <label for="firstName" class="control-label">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required
+                           placeholder="First Name" ng-model="user.firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="control-label">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required
+                           placeholder="Last Name" ng-model="user.lastName">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                           required placeholder="Email address"
+                           ng-model="user.email">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="control-label">Telephone:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone"
+                           placeholder="845-430-8752" ng-model="user.phone" required>
+                </div>
+
+                <input class="btn btn-lg btn-primary" ng-disabled="contactForm.$invalid" type="submit" value="Next" />
+            </form>
+        </div>
+    </div>
+
+    <tr-progress-bar dynamic="dynamic">
+</div>

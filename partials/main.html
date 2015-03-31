@@ -1,0 +1,14 @@
+<div class="center-block" ng-controller="mainController">
+    <h1>Thomson Reuters Assessment!!</h1>
+
+    <tabset class="center-block">
+        <tab  ng-repeat="t in tabs"
+                heading="{{t.heading}}"
+                active="t.active"
+                disabled="t.disabled">
+        </tab>
+    </tabset>
+    <div class="container-fluid margin-top-30">
+        <div class="center-block" ui-view></div>
+    </div>
+</div>
