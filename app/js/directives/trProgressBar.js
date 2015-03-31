@@ -3,7 +3,7 @@
  */
 thomsonTest.directive('trProgressBar', function() {
     return {
-        templateUrl: "directives/templates/tr.progress.bar.html",
+        templateUrl: "app/partials/templates/tr.progress.bar.html",
         restrict: "E",
         scope: {
             dynamic: '='
